@@ -12,6 +12,11 @@ public class Main {
     /**
      *
      * @param args
+     * 
+     * @startuml
+     * class Main {
+     * + MainWindow(String[] args)
+     * }
      */
     public static void MainWindow(String[] args) {
         JFrame frame = new JFrame("Perpustakaan Gempurs");

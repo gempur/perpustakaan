@@ -16,6 +16,18 @@ public class View {
     /**
      *
      * @param desktopPane
+     * 
+     * @startuml
+     * class View {
+     * + static void Buku(JDesktopPane desktopPane)
+     * + static void Penerbit(JDesktopPane desktopPane)
+     * + static void Peminjam(JDesktopPane desktopPane)
+     * + static void Rak(JDesktopPane desktopPane)
+     * + JPanel StaffForm()
+     * + JPanel StaffTable()
+     * + static void Staff(JDesktopPane desktopPane)
+     * }
+     * @enduml
      */
     public static void Buku(JDesktopPane desktopPane){
         DefaultTableModel modelBuku = Model.GetBookAll();

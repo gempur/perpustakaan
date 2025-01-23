@@ -18,6 +18,19 @@ public class Menu {
      *
      * @param frame
      * @param desktopPane
+     * 
+     * @startuml
+     * class Menu {
+     * + SetMenuBar(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuStaff(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuBuku(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuRak(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuPeminjam(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuLaf(JFrame frame, JDesktopPane desktopPane)
+     * + SetMenuFile(JFrame frame, JDesktopPane desktopPane)
+     * }
+     * Menu --> Controller
+     * @enduml
      */
     public static void SetMenuBar(JFrame frame, JDesktopPane desktopPane) {
         javax.swing.JMenuBar menuBar = new javax.swing.JMenuBar();

@@ -13,6 +13,13 @@ public class StatusBar {
     /**
      *
      * @param frame
+     * 
+     * @startuml
+     * class StatusBar {
+     * + SetStatusBar(JFrame frame)
+     * }
+     * StatusBar --> Controller
+     * @enduml
      */
     public static void SetStatusBar(JFrame frame) {
         JPanel statusPanel = new JPanel();

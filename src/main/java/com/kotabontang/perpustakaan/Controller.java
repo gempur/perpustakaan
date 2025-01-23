@@ -12,7 +12,31 @@ import javax.swing.JTextField;
 public class Controller {
 
     /**
-     *
+     * @startuml
+     * class Controller {
+     * +GenerateDummy()
+     * +TruncateAll()
+     * +saveBuku(String kode_buku, String judul, String pengarang, String penerbit)
+     * +hapusBuku(String kode_buku)
+     * +ResetFormBuku(JTextField textKodeBuku, JTextArea textJudulBuku, JTextField textPengarang, JComboBox comboPenerbit)
+     * +EditFormBuku(JTextField textKodeBuku, JTextArea textJudulBuku, JTextField textPengarang, JComboBox comboPenerbit, String kode_buku, String judul, String pengarang, String penerbit)
+     * +hapusPenerbit(String kode_penerbit)
+     * +EditFormPenerbit(JTextField textKodePenerbit, JTextField textNamaPenerbit, String kode_penerbit, String nama_penerbit)
+     * +ResetFormPenerbit(JTextField textKodePenerbit, JTextField textNamaPenerbit)
+     * +savePenerbit(String text, String text2)
+     * +EditFormPeminjam(JTextField textKodePeminjam, JTextField textNamaPeminjam, JTextArea textAlamat, String kode_peminjam, String nama_peminjam, String alamat)
+     * +ResetFormPeminjam(JTextField textKodePeminjam, JTextField textNamaPeminjam, JTextArea textAlamat)
+     * +savePeminjam(String text, String text2, String text3)
+     * +hapusPeminjam(String kode_peminjam)
+     * +hapusRak(String kode_rak)
+     * +EditFormRak(JTextField textKodeRak, JTextField textNamaRak, String kode_rak, String nama_rak)
+     * +ResetFormRak(JTextField textKodeRak, JTextField textNamaRak)
+     * +saveRak(String text, String text2)
+     * }
+     * Controller --> Model
+     * Model --> Controller
+     * 
+     * @enduml
      */
     public static void GenerateDummy(){
         // Generate dummy book

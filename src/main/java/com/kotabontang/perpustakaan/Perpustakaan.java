@@ -12,7 +12,22 @@ public class Perpustakaan {
     /**
      *
      * @param args
-     * @throws ClassNotFoundException
+     * 
+     * @startuml
+     * class Perpustakaan {
+     * + conn
+     * + main(String[] args)
+     * + exit_app()
+     * }
+     * Perpustakaan --> Model
+     * Perpustakaan --> Main
+     * Main --> Menu
+     * Main --> StatusBar
+     * Main --> Model
+     * Model --> Perpustakaan
+     * Menu --> Perpustakaan
+     * StatusBar --> Perpustakaan
+     * @enduml
      */
     public static void main(String[] args) throws ClassNotFoundException {    
         conn = Model.connect();

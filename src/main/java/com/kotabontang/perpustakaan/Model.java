@@ -13,8 +13,34 @@ public class Model {
 
     /**
      *
-     * @return
+     * @return Connection 
      * @throws ClassNotFoundException
+     * 
+     * Method ini digunakan untuk melakukan koneksi ke database
+     * 
+     * @startuml
+     * class Model {
+     * + connect() : Connection
+     * + GenerateID(table: String, field: String) : String
+     * + InsertPenerbit(nama: String, alamat: String) : void
+     * + CheckRecord(table: String, field: String, value: String) : Boolean
+     * + InsertBook(judul: String, pengarang: String, kode_penerbit: String) : void
+     * + UpdateBook(kode_buku: String, judul: String, pengarang: String, kode_penerbit: String) : void
+     * + DeleteBook(kode_buku: String) : void
+     * + GetBookAll() : DefaultTableModel
+     * + InsertRak(nama: String) : void
+     * + InsertRakBuku(kode_rak: String, kode_buku: String, jumlah: int) : void
+     * + GetKodePenerbit(nama: String) : String
+     * + GetKodeRak(nama: String) : String
+     * + GetKodeBuku(judul: String) : String
+     * + SetReffential(val: String) : void
+     * + TruncateAll() : void
+     * + GetPenerbit() : ResultSet
+     * + GetPenerbitAll() : DefaultTableModel
+     * + GetPeminjamAll() : DefaultTableModel
+     * + GetRakAll() : DefaultTableModel
+     * }
+     * @enduml
      */
     public static Connection connect() throws ClassNotFoundException {
         String DBurl = "jdbc:mysql://localhost/perpustakaan";
