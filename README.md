@@ -1,3 +1,3 @@
-# Syarat UAS pada Mata Kuliah PBO 
-# STITEK Bontang
+# Syarat UAS pada Mata Kuliah PBO di STITEK Bontang
+
 
