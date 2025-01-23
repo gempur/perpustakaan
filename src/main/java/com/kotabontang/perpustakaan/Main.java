@@ -3,8 +3,16 @@ package com.kotabontang.perpustakaan;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ *
+ * @author gempur
+ */
 public class Main {
 
+    /**
+     *
+     * @param args
+     */
     public static void MainWindow(String[] args) {
         JFrame frame = new JFrame("Perpustakaan Gempurs");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

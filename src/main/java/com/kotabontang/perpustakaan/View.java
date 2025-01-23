@@ -7,8 +7,16 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
+/**
+ *
+ * @author gempur
+ */
 public class View {
 
+    /**
+     *
+     * @param desktopPane
+     */
     public static void Buku(JDesktopPane desktopPane){
         DefaultTableModel modelBuku = Model.GetBookAll();
 
@@ -139,6 +147,10 @@ public class View {
         desktopPane.add(frame);
     }
 
+    /**
+     *
+     * @param desktopPane
+     */
     public static void Penerbit(JDesktopPane desktopPane){
         DefaultTableModel modelPenerbit = Model.GetPenerbitAll();
 
@@ -249,6 +261,10 @@ public class View {
         
     }
    
+    /**
+     *
+     * @param desktopPane
+     */
     public static void Peminjam(JDesktopPane desktopPane) {
         DefaultTableModel modelPeminjam = Model.GetPeminjamAll();
 
@@ -364,6 +380,10 @@ public class View {
 
     }
 
+    /**
+     *
+     * @param desktopPane
+     */
     public static void Rak(JDesktopPane desktopPane) {
         DefaultTableModel modelRak = Model.GetRakAll();
 
@@ -473,8 +493,10 @@ public class View {
         
     }
     
-
-
+    /**
+     *
+     * @return
+     */
     public  JPanel StaffForm() {
         JPanel panel = new JPanel();
         panel.setLayout(new GridBagLayout());
@@ -502,6 +524,10 @@ public class View {
         return panel;
     }
 
+    /**
+     *
+     * @return
+     */
     public  JPanel StaffTable() {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
@@ -535,6 +561,10 @@ public class View {
         return panel;
     }
 
+    /**
+     *
+     * @param desktopPane
+     */
     public static void Staff(JDesktopPane desktopPane) {
         JInternalFrame frame = new JInternalFrame("Staff", true, true, true, true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

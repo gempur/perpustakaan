@@ -4,9 +4,18 @@ import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+/**
+ *
+ * @author gempur
+ */
 public class Model {
     static Connection conn = null;
 
+    /**
+     *
+     * @return
+     * @throws ClassNotFoundException
+     */
     public static Connection connect() throws ClassNotFoundException {
         String DBurl = "jdbc:mysql://localhost/perpustakaan";
         String DBusername = "root";
@@ -21,6 +30,12 @@ public class Model {
         return conn;
     }
 
+    /**
+     *
+     * @param table
+     * @param field
+     * @return
+     */
     public static String GenerateID(String table, String field) {
         String id = "";
         String sql = "SELECT MAX(cast(" + field + " as signed)) FROM " + table;
@@ -43,6 +58,11 @@ public class Model {
         return id;
     }
 
+    /**
+     *
+     * @param nama
+     * @param alamat
+     */
     public static void InsertPenerbit(String nama, String alamat) {
         String sql = "INSERT INTO penerbit (kode_penerbit, nama_penerbit)  VALUES (?, ?)";
         try {
@@ -55,7 +75,13 @@ public class Model {
         }
     }
 
-
+    /**
+     *
+     * @param table
+     * @param field
+     * @param value
+     * @return
+     */
     public static Boolean CheckRecord(String table, String field, String value) {
         Boolean result = false;
         String sql = "SELECT count(1) as jumlah FROM " + table + " WHERE " + field + " = ?";
@@ -73,6 +99,13 @@ public class Model {
     }
 
     // Buku
+
+    /**
+     *
+     * @param judul
+     * @param pengarang
+     * @param kode_penerbit
+     */
     public static void InsertBook(String judul, String pengarang, String kode_penerbit) {
        
         String sql = "INSERT INTO buku (kode_buku, judul, pengarang, kode_penerbit) VALUES (?, ?, ?, ?)";
@@ -88,6 +121,13 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param kode_buku
+     * @param judul
+     * @param pengarang
+     * @param kode_penerbit
+     */
     public static void UpdateBook(String kode_buku, String judul, String pengarang, String kode_penerbit) {
         String sql = "UPDATE buku SET judul = ?, pengarang = ?, kode_penerbit = ? WHERE kode_buku = ?";
         try {
@@ -102,6 +142,10 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param kode_buku
+     */
     public static void DeleteBook(String kode_buku) {
         String sql = "DELETE FROM buku WHERE kode_buku = ?";
         try {
@@ -113,6 +157,10 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public static DefaultTableModel GetBookAll(){
         ResultSet rs = null;
         DefaultTableModel model = new DefaultTableModel();
@@ -154,6 +202,10 @@ public class Model {
         
     }
 
+    /**
+     *
+     * @param nama
+     */
     public static void InsertRak(String nama) {
         String sql = "INSERT INTO rak (id, nama) VALUES (?, ?)";
         try {
@@ -166,6 +218,12 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param kode_rak
+     * @param kode_buku
+     * @param jumlah
+     */
     public static void InsertRakBuku(String kode_rak, String kode_buku, int jumlah) {
         String sql = "INSERT INTO buku_rak (rak, buku, qty) VALUES (?, ?, ?)";
         try {
@@ -179,6 +237,11 @@ public class Model {
         }
     }
 
+    /**
+     *
+     * @param nama
+     * @return
+     */
     public static String GetKodePenerbit(String nama) {
         String kode_penerbit = "";
         String sql = "SELECT kode_penerbit FROM penerbit WHERE nama_penerbit = ?";
@@ -195,6 +258,11 @@ public class Model {
         return kode_penerbit;
     }
 
+    /**
+     *
+     * @param nama
+     * @return
+     */
     public static String GetKodeRak(String nama) {
         String kode_rak = "";
         String sql = "SELECT id FROM rak WHERE nama = ?";
@@ -211,6 +279,11 @@ public class Model {
         return kode_rak;
     }
 
+    /**
+     *
+     * @param judul
+     * @return
+     */
     public static String GetKodeBuku(String judul) {
         String kode_buku = "";
         String sql = "SELECT kode_buku FROM buku WHERE judul like ? LIMIT 1";
@@ -228,6 +301,10 @@ public class Model {
         return kode_buku;
     }
     
+    /**
+     *
+     * @param val
+     */
     public static void SetReffential(String val) {
         String sql = "SET FOREIGN_KEY_CHECKS = " + val;
         try {
@@ -238,6 +315,9 @@ public class Model {
         }
     }
 
+    /**
+     *
+     */
     public static void TruncateAll() {
         String[] tables = {"buku", "penerbit", "rak", "buku_rak"};
         String sql = "";
@@ -254,6 +334,10 @@ public class Model {
         SetReffential("1");
     }
 
+    /**
+     *
+     * @return
+     */
     public static ResultSet GetPenerbit() {
         ResultSet rs = null;
         String sql = "SELECT * FROM penerbit";
@@ -266,6 +350,10 @@ public class Model {
         return rs;
     }
 
+    /**
+     *
+     * @return
+     */
     public static DefaultTableModel GetPenerbitAll() {
         ResultSet rs = null;
         DefaultTableModel model = new DefaultTableModel();
@@ -297,6 +385,10 @@ public class Model {
         return model;
     }
 
+    /**
+     *
+     * @return
+     */
     public static DefaultTableModel GetPeminjamAll() {
         ResultSet rs = null;
         DefaultTableModel model = new DefaultTableModel();
@@ -328,6 +420,10 @@ public class Model {
         return model;
     }
 
+    /**
+     *
+     * @return
+     */
     public static DefaultTableModel GetRakAll() {
         ResultSet rs = null;
         DefaultTableModel model = new DefaultTableModel();

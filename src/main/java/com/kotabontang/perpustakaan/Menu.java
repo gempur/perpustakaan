@@ -6,10 +6,19 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-
+/**
+ *
+ * @author gempur
+ */
 public class Menu {
 
     // Set Menu Bar
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     */
     public static void SetMenuBar(JFrame frame, JDesktopPane desktopPane) {
         javax.swing.JMenuBar menuBar = new javax.swing.JMenuBar();
         frame.setJMenuBar(menuBar);
@@ -23,6 +32,13 @@ public class Menu {
     }
 
     // Menu Staff
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuStaff(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuStaff = new JMenu("Staff");
         JMenuItem mTambahStaff = new JMenuItem("Tambah Staff");
@@ -36,6 +52,13 @@ public class Menu {
     }
     
     // Menu Buku
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuBuku(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuBuku = new JMenu("Buku");
         JMenuItem mManajemenBuku = new JMenuItem("Manajemen Buku");
@@ -56,6 +79,13 @@ public class Menu {
     }
 
     // Menu Rak
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuRak(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuRak = new JMenu("Rak");
         JMenuItem mTambahRak = new JMenuItem("Manajemen Rak");
@@ -68,6 +98,12 @@ public class Menu {
         return menuRak;
     }
 
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuPeminjam(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuPeminjam = new JMenu("Peminjam");
         JMenuItem mTambahPeminjam = new JMenuItem("Manajemen Peminjam");
@@ -81,6 +117,13 @@ public class Menu {
     }
 
     // Menu Look and Feel
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuLaf(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuLaf = new JMenu("Look and Feel");
         JMenuItem mMetal = new JMenuItem("Metal");
@@ -118,6 +161,13 @@ public class Menu {
     }
 
     // Menu File
+
+    /**
+     *
+     * @param frame
+     * @param desktopPane
+     * @return
+     */
     public static JMenu SetMenuFile(JFrame frame, JDesktopPane desktopPane) {
         JMenu menuFile = new JMenu("File");
         JMenuItem mAbout = new JMenuItem("About");

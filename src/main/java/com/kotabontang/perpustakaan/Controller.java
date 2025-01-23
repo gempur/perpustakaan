@@ -5,8 +5,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+/**
+ *
+ * @author gempur
+ */
 public class Controller {
 
+    /**
+     *
+     */
     public static void GenerateDummy(){
         // Generate dummy book
         String[] judul_arr = {"Buku A", "Buku B", "Buku C", "Buku D", "Buku E"};
@@ -47,10 +54,20 @@ public class Controller {
 
     }
 
+    /**
+     *
+     */
     public static void TruncateAll(){
         Model.TruncateAll();
     }
 
+    /**
+     *
+     * @param kode_buku
+     * @param judul
+     * @param pengarang
+     * @param penerbit
+     */
     public static void saveBuku(String kode_buku, String judul, String pengarang, String penerbit){
         String kode_penerbit = Model.GetKodePenerbit(penerbit);
         Boolean checkrecord = Model.CheckRecord("buku", "kode_penerbit", kode_penerbit);
@@ -64,11 +81,22 @@ public class Controller {
         JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
     }
 
+    /**
+     *
+     * @param kode_buku
+     */
     public static void hapusBuku(String kode_buku){
         Model.DeleteBook(kode_buku);
         JOptionPane.showMessageDialog(null, "Data Berhasil Dihapus");
     }
 
+    /**
+     *
+     * @param textKodeBuku
+     * @param textJudulBuku
+     * @param textPengarang
+     * @param comboPenerbit
+     */
     public static void ResetFormBuku(JTextField textKodeBuku, JTextArea textJudulBuku, JTextField textPengarang, JComboBox comboPenerbit){
         textKodeBuku.setText("");
         textJudulBuku.setText("");
@@ -78,6 +106,17 @@ public class Controller {
         textJudulBuku.requestFocus();
     }
 
+    /**
+     *
+     * @param textKodeBuku
+     * @param textJudulBuku
+     * @param textPengarang
+     * @param comboPenerbit
+     * @param kode_buku
+     * @param judul
+     * @param pengarang
+     * @param penerbit
+     */
     public static void EditFormBuku(JTextField textKodeBuku, JTextArea textJudulBuku, JTextField textPengarang, JComboBox comboPenerbit, String kode_buku, String judul, String pengarang, String penerbit){
         textKodeBuku.setText(kode_buku);
         textJudulBuku.setText(judul);
@@ -87,64 +126,131 @@ public class Controller {
         textJudulBuku.requestFocus();
     }
 
+    /**
+     *
+     * @param kode_penerbit
+     */
     public static void hapusPenerbit(String kode_penerbit) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hapusPenerbit'");
     }
 
+    /**
+     *
+     * @param textKodePenerbit
+     * @param textNamaPenerbit
+     * @param kode_penerbit
+     * @param nama_penerbit
+     */
     public static void EditFormPenerbit(JTextField textKodePenerbit, JTextField textNamaPenerbit, String kode_penerbit,
             String nama_penerbit) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'EditFormPenerbit'");
     }
 
+    /**
+     *
+     * @param textKodePenerbit
+     * @param textNamaPenerbit
+     */
     public static void ResetFormPenerbit(JTextField textKodePenerbit, JTextField textNamaPenerbit) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'ResetFormPenerbit'");
     }
 
+    /**
+     *
+     * @param text
+     * @param text2
+     */
     public static void savePenerbit(String text, String text2) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'savePenerbit'");
     }
 
+    /**
+     *
+     * @param textKodePeminjam
+     * @param textNamaPeminjam
+     * @param textAlamat
+     * @param kode_peminjam
+     * @param nama_peminjam
+     * @param alamat
+     */
     public static void EditFormPeminjam(JTextField textKodePeminjam, JTextField textNamaPeminjam, JTextArea textAlamat,
             String kode_peminjam, String nama_peminjam, String alamat) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'EditFormPeminjam'");
     }
 
+    /**
+     *
+     * @param textKodePeminjam
+     * @param textNamaPeminjam
+     * @param textAlamat
+     */
     public static void ResetFormPeminjam(JTextField textKodePeminjam, JTextField textNamaPeminjam,
             JTextArea textAlamat) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'ResetFormPeminjam'");
     }
 
+    /**
+     *
+     * @param text
+     * @param text2
+     * @param text3
+     */
     public static void savePeminjam(String text, String text2, String text3) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'savePeminjam'");
     }
 
+    /**
+     *
+     * @param kode_peminjam
+     */
     public static void hapusPeminjam(String kode_peminjam) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hapusPeminjam'");
     }
 
+    /**
+     *
+     * @param kode_rak
+     */
     public static void hapusRak(String kode_rak) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'hapusRak'");
     }
 
+    /**
+     *
+     * @param textKodeRak
+     * @param textNamaRak
+     * @param kode_rak
+     * @param nama_rak
+     */
     public static void EditFormRak(JTextField textKodeRak, JTextField textNamaRak, String kode_rak, String nama_rak) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'EditFormRak'");
     }
 
+    /**
+     *
+     * @param textKodeRak
+     * @param textNamaRak
+     */
     public static void ResetFormRak(JTextField textKodeRak, JTextField textNamaRak) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'ResetFormRak'");
     }
 
+    /**
+     *
+     * @param text
+     * @param text2
+     */
     public static void saveRak(String text, String text2) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveRak'");

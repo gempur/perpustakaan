@@ -4,7 +4,16 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ *
+ * @author gempur
+ */
 public class StatusBar {
+
+    /**
+     *
+     * @param frame
+     */
     public static void SetStatusBar(JFrame frame) {
         JPanel statusPanel = new JPanel();
         statusPanel.setLayout(new BorderLayout());
