@@ -94,15 +94,12 @@ public class Controller {
      */
     public static void saveBuku(String kode_buku, String judul, String pengarang, String penerbit){
         String kode_penerbit = Model.GetKodePenerbit(penerbit);
-        Boolean checkrecord = Model.CheckRecord("buku", "kode_penerbit", kode_penerbit);
-
-        if (checkrecord){
-            Model.UpdateBook(kode_buku, judul, pengarang, kode_penerbit);
-        } else {
+        System.out.println(kode_buku);
+        if (kode_buku.isEmpty()) {
             Model.InsertBook(judul, pengarang, kode_penerbit);
+        } else {
+            Model.UpdateBook(kode_buku, judul, pengarang, kode_penerbit);
         }
-
-        JOptionPane.showMessageDialog(null, "Data Berhasil Disimpan");
     }
 
     /**

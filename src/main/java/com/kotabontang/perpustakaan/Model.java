@@ -1,6 +1,8 @@
 package com.kotabontang.perpustakaan;
 
 import java.sql.*;
+
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -108,15 +110,15 @@ public class Model {
      * @param value
      * @return
      */
-    public static Boolean CheckRecord(String table, String field, String value) {
-        Boolean result = false;
+    public static Integer CheckRecord(String table, String field, String value) {
+        Integer result = 0;
         String sql = "SELECT count(1) as jumlah FROM " + table + " WHERE " + field + " = ?";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, value);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                result = rs.getInt(1) > 0;
+                result = rs.getInt(1);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -142,6 +144,7 @@ public class Model {
             stmt.setString(3, pengarang);
             stmt.setString(4, kode_penerbit);
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Insert Berhasil Disimpan");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -163,6 +166,7 @@ public class Model {
             stmt.setString(3, kode_penerbit);
             stmt.setString(4, kode_buku);
             stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Update Berhasil Disimpan");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
